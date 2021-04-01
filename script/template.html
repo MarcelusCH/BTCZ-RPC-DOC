@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1200px, shrink-to-fit=yes">
+    <meta name="description" content="BitcoinZ  2.0.7 RPC Docs{{if .Command}} - {{.Command.Name}}{{end}}">
+    <meta name="author" content="">
+
+    <title>{{if .Command}}{{.Command.Name}} - {{end}}BitcoinZ  2.0.7 RPC Docs</title>
+
+    <link href="./bootstrap.min.css" rel="stylesheet">
+  </head>
+  <style>
+  .card-body {
+    font-size:80%;
+    padding-top: 0.5em;
+  }
+  pre {
+    word-break: break-word;
+    white-space: pre-wrap;
+  }
+  </style>
+
+  <body>
+
+
+    <nav class="navbar  navbar-dark bg-dark ">
+      <a class="navbar-brand" href="/">BitcoinZ  2.0.7 RPC docs</a>
+    </nav>
+
+    <main role="main" class="container-fluid" style="margin-top: 1pc;">
+
+      <div class="row">
+        <div class="col-8 col-lg-9 col-xl-10">
+            <h1>{{if .Command}}{{.Command.Name}} - {{end}}BitcoinZ  2.0.7 RPC</h1>
+          {{if .Command}}
+            <pre>{{.Command.Description}}</pre>
+            <hr>
+          {{end}}
+          <p>
+          Maintained by <a href="https://twitter.com/_garethtdavies">@_garethtdavies</a>; license of the docs is MIT (see <a href="https://github.com/zcash/zcash">zcash repo</a>), license of the scripts and webpage is also MIT (<a href="https://github.com/zcash-rpc/zcash-rpc.github.io">github repo</a>)
+          </p>
+          <p>
+          Note it uses a mainnet node
+          </p>
+        </div>
+        <div class="col-4 col-lg-3 col-xl-2">
+          {{range .Groups}}
+            <div class="card">
+              <div class="card-header">
+                {{.Name}}
+              </div>
+              <div class="card-body">
+                {{range .Commands}}
+                  <a href="{{.Name}}.html">{{.Name}}</a>
+                  <br>
+                {{end}}
+              </div>
+            </div>
+            <br>
+          {{end}}
+        </div>
+      </div>
+    </main> <!-- /container -->
+  </body>
+</html>
